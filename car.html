@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Car Insurance</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+
+/* Page-specific styles for Car Insurance */
+
+.hero-desc{
+  background: #0d6efd;
+  color: #fff;
+  padding: 60px 20px;
+  border-radius: 15px;
+  text-align: center;
+  margin-bottom: 40px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.hero-desc i{
+  font-size: 50px;
+  margin-bottom: 15px;
+}
+
+.hero-desc h1{
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.hero-desc p{
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.pricing-section .card{
+  border-radius: 15px;
+  padding: 30px 20px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.pricing-section .card:hover{
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+.pricing-section .card h4{
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.pricing-section .card p{
+  color:#555;
+  margin-bottom:15px;
+}
+
+.pricing-section .card .price{
+  font-size: 24px;
+  font-weight: bold;
+  color:#092a5a;
+  margin-bottom: 15px;
+}
+
+.contact-section{
+  margin-top:50px;
+  margin-bottom:50px;
+}
+
+.contact-section form .btn{
+  width: 100%;
+  transition: 0.3s;
+}
+
+.contact-section form .btn:hover{
+  background:#0d6efd;
+  color:#fff;
+}
+
+/* Popular Plan Highlight */
+.card.popular {
+  border: 3px solid #0d6efd; /* full blue border */
+  box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+  transform: scale(1.05); /* slightly bigger to standout */
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card.popular::before {
+  content: "Most Popular";
+  display: block;
+  background: #0d6efd;
+  color: #fff;
+  text-align: center;
+  font-weight: bold;
+  padding: 5px 0;
+  border-radius: 10px 10px 0 0;
+  margin-bottom: 10px;
+}
+
+</style>
+
+</head>
+<body>
+  <!-- ================= HEADER ================= -->
+<!-- ================= NAVBAR ================= -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+  <div class="container">
+    
+    <a class="navbar-brand fw-bold" href="index.html">
+      SecureLife
+    </a>
+
+    <!-- Mobile Toggle -->
+    <button class="navbar-toggler" type="button" 
+            data-bs-toggle="collapse" 
+            data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Nav Links -->
+    <div class="collapse navbar-collapse" id="navbarNav" bg="primary">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link active" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="about.html">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="index copy.html">Plans</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="review.html">Reviews</a>
+        </li>
+      <li class="nav-item">
+  <a class="nav-link contact-btn ms-2 px-3" href="contact.html">
+    Contact
+  </a>
+</li>
+
+      </ul>
+    </div>
+
+  </div>
+</nav>
+<div class="container my-5">
+
+<div class="hero-desc">
+<i class="fa-solid fa-car"></i>
+<h1>Car Insurance</h1>
+<p>Protect your vehicle against accidents, theft, and damages with full coverage plans.</p>
+</div>
+
+<h3 class="mb-4 text-center">Our Plans</h3>
+<div class="row g-4 pricing-section">
+<div class="col-md-4 col-sm-6">
+<div class="card">
+<h4>Basic Plan</h4>
+<p>Third-Party Liability</p>
+<div class="price">PKR 3,000 / month</div>
+<button class="btn btn-outline-primary" onclick="openPlan('Basic')">View Basic Plan</button>
+</div>
+</div>
+
+<div class="col-md-4 col-sm-6">
+<div class="card popular">
+<h4>Standard Plan</h4>
+<p>Collision + Theft</p>
+<div class="price">PKR 6,000 / month</div>
+<button class="btn btn-outline-primary" onclick="openPlan('Standard')">View Standard Plan</button>
+</div>
+</div>
+
+<div class="col-md-4 col-sm-6">
+<div class="card">
+<h4>Premium Plan</h4>
+<p>Full Vehicle Coverage</p>
+<div class="price">PKR 10,000 / month</div>
+<button class="btn btn-outline-primary" onclick="openPlan('Premium')">View Premium Plan</button>
+</div>
+</div>
+</div>
+
+<!-- Contact Form -->
+<div class="contact-section" id="contact-section">
+  <h3 class="mb-3 text-center">Contact Us</h3>
+  <form>
+    <div class="mb-2">
+      <input type="text" class="form-control" placeholder="Full Name">
+    </div>
+    <div class="mb-2">
+      <input type="email" class="form-control" placeholder="Email Address">
+    </div>
+    <div class="mb-2">
+      <input type="text" class="form-control" placeholder="Phone Number">
+    </div>
+    <div class="mb-2">
+      <textarea class="form-control" placeholder="Your Message"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+</div>
+
+<!-- Plan Detail Modal  -->
+<div class="modal fade" id="planModal">
+  <div class="modal-dialog modal-xl modal-dialog-centered">
+    <div class="modal-content p-4">
+
+      <div class="modal-body">
+        <div class="row align-items-center">
+
+          <!-- Left Side Details -->
+          <div class="col-md-7">
+            <h2 id="planTitle" class="mb-3"></h2>
+            <p id="planDescription"></p>
+
+            <h5 class="mt-3">Key Features:</h5>
+            <ul id="planFeatures"></ul>
+
+            <h4 class="mt-3 text-primary" id="planPrice"></h4>
+
+            <button class="btn btn-primary mt-3" onclick="openContactModal()">
+              Choose This Plan
+            </button>
+          </div>
+
+          <!-- Right Side Image -->
+          <div class="col-md-5 text-center">
+            <img id="planImage" class="img-fluid rounded shadow">
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- Contact Form Modal -->
+<div class="modal fade" id="contactModal">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content p-4">
+
+      <h4 class="text-center mb-3">Apply for Plan</h4>
+
+      <form id="contactForm">
+        <input type="text" id="selectedPlan" class="form-control mb-2" readonly>
+
+        <input type="text" id="name" class="form-control mb-2" placeholder="Full Name" required>
+        <input type="email" id="email" class="form-control mb-2" placeholder="Email Address" required>
+        <input type="text" id="phone" class="form-control mb-2" placeholder="Phone Number" required>
+        <textarea id="message" class="form-control mb-2" placeholder="Your Message" required></textarea>
+
+        <button class="btn btn-primary w-100">Submit</button>
+      </form>
+
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+let selectedPlanName = "";
+
+let planModal = new bootstrap.Modal(document.getElementById('planModal'));
+let contactModal = new bootstrap.Modal(document.getElementById('contactModal'));
+
+function openPlan(plan){
+  selectedPlanName = plan;
+
+  let title = document.getElementById("planTitle");
+  let desc = document.getElementById("planDescription");
+  let features = document.getElementById("planFeatures");
+  let price = document.getElementById("planPrice");
+  let image = document.getElementById("planImage");
+
+  features.innerHTML = "";
+
+  // BASIC PLAN
+  if(plan === "Basic"){
+    title.innerText = "Basic Car Insurance";
+    desc.innerText = "This plan is perfect for individual car owners who want essential protection for their vehicles. It covers common risks such as accidental damage, minor collisions, and theft protection. The plan is affordable and suitable for daily drivers who need basic financial security. It also includes roadside assistance and emergency towing support for unexpected situations.";
+    price.innerText = "PKR 3,000 / month";
+    image.src = "https://images.unsplash.com/photo-1503376780353-7e6692767b70";
+
+    let list = [
+      "Accidental Damage Coverage",
+      "Theft Protection",
+      "Third-Party Liability (Basic)",
+      "Roadside Assistance",
+      "Emergency Towing Service"
+    ];
+    list.forEach(item => features.innerHTML += `<li>${item}</li>`);
+  }
+
+  // STANDARD PLAN
+  if(plan === "Standard"){
+    title.innerText = "Standard Car Insurance";
+    desc.innerText = "This plan is designed for car owners who want enhanced protection and peace of mind. In addition to basic coverage, it protects against natural disasters, major accidents, and third-party damages. It is ideal for regular commuters and families who rely heavily on their vehicles. The plan also offers faster claim processing and optional vehicle replacement support during repairs.";
+    price.innerText = "PKR 6,000 / month";
+    image.src = "https://images.unsplash.com/photo-1493238792000-8113da705763";
+
+    let list = [
+      "All Basic Plan Features",
+      "Full Third-Party Liability",
+      "Natural Disaster Coverage",
+      "Major Accident Protection",
+      "Quick Claim Processing"
+    ];
+    list.forEach(item => features.innerHTML += `<li>${item}</li>`);
+  }
+
+  // PREMIUM PLAN
+  if(plan === "Premium"){
+    title.innerText = "Premium Car Insurance";
+    desc.innerText = "This comprehensive plan provides maximum protection for your vehicle and complete financial security. It includes full coverage for accidents, theft, fire, floods, and total loss situations. Best for luxury car owners and business users who cannot afford downtime. Additional benefits include zero depreciation, car replacement option, and 24/7 priority customer and claim support services.";
+    price.innerText = "PKR 10,000 / month";
+    image.src ="https://images.unsplash.com/photo-1683290585497-18de3eb3753f?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8cHJlbWl1bSUyMGNhcnN8ZW58MHx8MHx8fDA%3D"
+
+    let list = [
+      "All Standard Plan Features",
+      "Zero Depreciation Cover",
+      "Engine Protection",
+      "Car Replacement Option",
+      "24/7 Priority Claim Support"
+    ];
+    list.forEach(item => features.innerHTML += `<li>${item}</li>`);
+  }
+
+  planModal.show();
+}
+
+function openContactModal(){
+  planModal.hide();
+  document.getElementById("selectedPlan").value = selectedPlanName + " Plan";
+  contactModal.show();
+}
+
+// Form Validation
+document.getElementById("contactForm").addEventListener("submit", function(e){
+  e.preventDefault();
+
+  let name = document.getElementById("name").value.trim();
+  let email = document.getElementById("email").value.trim();
+  let phone = document.getElementById("phone").value.trim();
+  let message = document.getElementById("message").value.trim();
+
+  let emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+  let phonePattern = /^[0-9]{10,13}$/;
+
+  if(name === ""){
+    alert("Please enter your name");
+    return;
+  }
+
+  if(!email.match(emailPattern)){
+    alert("Please enter a valid email");
+    return;
+  }
+
+  if(!phone.match(phonePattern)){
+    alert("Please enter a valid phone number");
+    return;
+  }
+
+  if(message === ""){
+    alert("Please enter your message");
+    return;
+  }
+
+  alert("Your car insurance application has been submitted successfully!");
+  contactModal.hide();
+  document.getElementById("contactForm").reset();
+});
+
+</script>
+
+<script src="script.js"></script>
+
+<!-- Footer -->
+<footer>© 2026 SecureLife Insurance</footer>
+
+
+</body>
+</html>

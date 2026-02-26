@@ -1,0 +1,77 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #f4f7fb;
+    color: #030205;
+}
+
+
+/* ===== NAVBAR ===== */
+.logo{
+    width: 12px;
+    height: 30px;
+  
+}
+
+header {
+    background: #0c3f4e;
+    padding: 15px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 999;
+    position: sticky;
+}
+
+/* NAVBAR FIX: BLUE BACKGROUND & WHITE TEXT */
+/* NAVBAR FIX: BLUE BACKGROUND, WHITE TEXT, MORE HEIGHT */
+.navbar {
+    background-color: #082046 !important; /* Blue navbar */
+    padding: 20px 0 !important;           /* Increase vertical height */
+}
+
+.navbar .navbar-brand {
+    color: #ffffff !important; /* White brand text */
+    font-weight: 700;
+    font-size: 26px;           /* Slightly bigger brand text */
+}
+
+.navbar .nav-link {
+    color: #ffffff !important; /* White links */
+    font-weight: 500;
+    font-size: 16px;
+    padding: 10px 15px;        /* Extra space inside links for height */
+    transition: color 0.3s;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+    color: #ffd369 !important; /* Gold hover/active */
+}
+
+/* Contact button */
+.navbar .btn {
+    background-color: #ffffff !important; /* White button */
+    color: #041836 !important;           /* Blue text */
+    border-radius: 25px;
+    padding: 8px 22px;                     /* Bigger button for taller navbar */
+    font-weight: 500;
+}
+
+/* Mobile toggle (hamburger icon) */
+.navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.3); /* white border */
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28255, 255, 255, 1%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}

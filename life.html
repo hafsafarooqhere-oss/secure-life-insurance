@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Life Insurance</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+<style>
+  /* NAVBAR FIX: BLUE BACKGROUND & WHITE TEXT */
+/* NAVBAR FIX: BLUE BACKGROUND, WHITE TEXT, MORE HEIGHT */
+.navbar {
+    background-color: #082046 !important; /* Blue navbar */
+    padding: 20px 0 !important;           /* Increase vertical height */
+}
+
+.navbar .navbar-brand {
+    color: #ffffff !important; /* White brand text */
+    font-weight: 700;
+    font-size: 26px;           /* Slightly bigger brand text */
+}
+
+.navbar .nav-link {
+    color: #ffffff !important; /* White links */
+    font-weight: 500;
+    font-size: 16px;
+    padding: 10px 15px;        /* Extra space inside links for height */
+    transition: color 0.3s;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+    color: #ffd369 !important; /* Gold hover/active */
+}
+
+/* Contact button */
+.navbar .btn {
+    background-color: #ffffff !important; /* White button */
+    color: #041836 !important;           /* Blue text */
+    border-radius: 25px;
+    padding: 8px 22px;                     /* Bigger button for taller navbar */
+    font-weight: 500;
+}
+
+/* Mobile toggle (hamburger icon) */
+.navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.3); /* white border */
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28255, 255, 255, 1%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+
+/* Page-specific styles for Life Insurance */
+
+.hero-desc{
+  background: #0d6efd;
+  color: #fff;
+  padding: 60px 20px;
+  border-radius: 15px;
+  text-align: center;
+  margin-bottom: 40px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.hero-desc i{
+  font-size: 50px;
+  margin-bottom: 15px;
+}
+
+.hero-desc h1{
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.hero-desc p{
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.pricing-section .card{
+  border-radius: 15px;
+  padding: 30px 20px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.pricing-section .card:hover{
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+.pricing-section .card h4{
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.pricing-section .card p{
+  color:#555;
+  margin-bottom:15px;
+}
+
+.pricing-section .card .price{
+  font-size: 24px;
+  font-weight: bold;
+  color:#092a5a;
+  margin-bottom: 15px;
+}
+
+.contact-section{
+  margin-top:50px;
+  margin-bottom:50px;
+}
+
+.contact-section form .btn{
+  width: 100%;
+  transition: 0.3s;
+}
+
+.contact-section form .btn:hover{
+  background:#0d6efd;
+  color:#fff;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+    background: #0c3f4e;
+    color: #fff;
+    padding: 80px 20px 60px; /* Bigger padding for a taller footer */
+    font-size: 16px;
+    position: relative;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 50px; /* More space between columns */
+}
+
+.footer-box h3 {
+    margin-bottom: 25px; /* More space below headings */
+    color: #ffd369;
+    font-size: 22px; /* Slightly bigger headings */
+}
+
+.footer-box p,
+.footer-box a {
+    font-size: 16px;
+    line-height: 2.2; /* More line spacing */
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 12px; /* Space between links/text */
+}
+
+.footer-box a:hover {
+    text-decoration: underline;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 50px; /* Space between content and bottom copyright */
+    font-size: 16px;
+    opacity: 0.9;
+}
+
+/* Optional: Add social media icons */
+.footer-social {
+    text-align: center;
+    margin-top: 25px;
+}
+
+.footer-social a {
+    display: inline-block;
+    margin: 0 12px;
+    font-size: 20px;
+    color: #fff;
+    transition: color 0.3s;
+}
+
+.footer-social a:hover {
+    color: #ffd369;
+}
+
+
+/* Popular Plan Highlight */
+.card.popular {
+  border: 3px solid #0d6efd; /* full blue border */
+  box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+  transform: scale(1.05); /* slightly bigger to standout */
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card.popular::before {
+  content: "Most Popular";
+  display: block;
+  background: #0d6efd;
+  color: #fff;
+  text-align: center;
+  font-weight: bold;
+  padding: 5px 0;
+  border-radius: 10px 10px 0 0;
+  margin-bottom: 10px;
+}
+
+</style>
+</head>
+<body>
+  <!-- ================= NAVBAR ================= -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+  <div class="container">
+    
+    <a class="navbar-brand fw-bold" href="index.html">
+      SecureLife
+    </a>
+
+    <!-- Mobile Toggle -->
+    <button class="navbar-toggler" type="button" 
+            data-bs-toggle="collapse" 
+            data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Nav Links -->
+    <div class="collapse navbar-collapse" id="navbarNav" bg="primary">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="about.html">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="index copy.html">Plans</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="review.html">Reviews</a>
+        </li>
+      <li class="nav-item">
+  <a class="nav-link contact-btn ms-2 px-3" href="contact.html">
+    Contact
+  </a>
+</li>
+
+      </ul>
+    </div>
+
+  </div>
+</nav>
+
+
+<div class="container my-5">
+
+<div class="hero-desc">
+<i class="fa-solid fa-heart-pulse"></i>
+<h1>Life Insurance</h1>
+<p>Secure your family’s future and ensure financial stability with our life plans.</p>
+</div>
+
+<h3 class="mb-4 text-center">Our Plans</h3>
+<div class="row g-4 pricing-section">
+<div class="col-md-4 col-sm-6">
+<div class="card">
+<h4>Basic Plan</h4>
+<p>Death Benefit</p>
+<div class="price">PKR 4,000 / month</div>
+<button class="btn btn-outline-primary" onclick="openPlan('Basic')">View Basic Plan</button>
+</div>
+</div>
+
+<div class="col-md-4 col-sm-6">
+<div class="card popular">
+<h4>Standard Plan</h4>
+<p>Death + Savings</p>
+<div class="price">PKR 7,000 / month</div>
+<button class="btn btn-outline-primary" onclick="openPlan('Standard')">View Standard Plan</button>
+</div>
+</div>
+
+<div class="col-md-4 col-sm-6">
+<div class="card">
+<h4>Premium Plan</h4>
+<p>Full Coverage + Investment</p>
+<div class="price">PKR 10,000 / month</div>
+<button class="btn btn-outline-primary" onclick="openPlan('Premium')">View Premium Plan</button>
+</div>
+</div>
+</div>
+
+<!-- Contact Form -->
+<div class="contact-section" id="contact-section">
+  <h3 class="mb-3 text-center">Contact Us</h3>
+  <form>
+    <div class="mb-2">
+      <input type="text" class="form-control" placeholder="Full Name">
+    </div>
+    <div class="mb-2">
+      <input type="email" class="form-control" placeholder="Email Address">
+    </div>
+    <div class="mb-2">
+      <input type="text" class="form-control" placeholder="Phone Number">
+    </div>
+    <div class="mb-2">
+      <textarea class="form-control" placeholder="Your Message"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+</div>
+
+
+<!-- Plan Detail Modal  -->
+<div class="modal fade" id="planModal">
+  <div class="modal-dialog modal-xl modal-dialog-centered">
+    <div class="modal-content p-4">
+
+      <div class="modal-body">
+        <div class="row align-items-center">
+
+          <!-- Left Side Details -->
+          <div class="col-md-7">
+            <h2 id="planTitle" class="mb-3"></h2>
+            <p id="planDescription"></p>
+
+            <h5 class="mt-3">Key Features:</h5>
+            <ul id="planFeatures"></ul>
+
+            <h4 class="mt-3 text-primary" id="planPrice"></h4>
+
+            <button class="btn btn-primary mt-3" onclick="openContactModal()">
+              Choose This Plan
+            </button>
+          </div>
+
+          <!-- Right Side Image -->
+          <div class="col-md-5 text-center">
+            <img id="planImage" class="img-fluid rounded shadow">
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- Contact Form Modal -->
+<div class="modal fade" id="contactModal">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content p-4">
+
+      <h4 class="text-center mb-3">Apply for Plan</h4>
+
+      <form id="contactForm">
+        <input type="text" id="selectedPlan" class="form-control mb-2" readonly>
+
+        <input type="text" id="name" class="form-control mb-2" placeholder="Full Name" required>
+        <input type="email" id="email" class="form-control mb-2" placeholder="Email Address" required>
+        <input type="text" id="phone" class="form-control mb-2" placeholder="Phone Number" required>
+        <textarea id="message" class="form-control mb-2" placeholder="Your Message" required></textarea>
+
+        <button class="btn btn-primary w-100">Submit</button>
+      </form>
+
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+let selectedPlanName = "";
+
+let planModal = new bootstrap.Modal(document.getElementById('planModal'));
+let contactModal = new bootstrap.Modal(document.getElementById('contactModal'));
+
+function openPlan(plan){
+  selectedPlanName = plan;
+
+  let title = document.getElementById("planTitle");
+  let desc = document.getElementById("planDescription");
+  let features = document.getElementById("planFeatures");
+  let price = document.getElementById("planPrice");
+  let image = document.getElementById("planImage");
+
+  features.innerHTML = "";
+
+  // BASIC
+  if(plan === "Basic"){
+    title.innerText = "Basic Life Insurance";
+    desc.innerText = "The Basic Life Insurance plan is designed to provide essential financial protection for your loved ones in case of an unexpected event. It ensures that your family receives financial support to manage daily expenses, debts, and immediate needs. This plan is ideal for individuals who want affordable coverage with reliable security and peace of mind for their family's future.";
+    price.innerText = "PKR 4,000 / month";
+    image.src = "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?auto=format&fit=crop&w=600&q=60";
+
+    let list = [
+      "Death Benefit Protection",
+      "Family Financial Support",
+      "Coverage for Natural & Accidental Death",
+      "Affordable Monthly Premium",
+      "Quick Claim Processing"
+    ];
+    list.forEach(item => features.innerHTML += `<li>${item}</li>`);
+  }
+
+  // STANDARD
+  if(plan === "Standard"){
+    title.innerText = "Standard Life Insurance";
+    desc.innerText = "The Standard Life Insurance plan offers extended protection and long-term financial security for your family. Along with life coverage, it provides additional benefits such as partial disability support and savings value over time. This plan is perfect for individuals who want balanced protection along with future financial stability and emergency support.";
+    price.innerText = "PKR 7,000 / month";
+    
+    image.src = "https://images.unsplash.com/photo-1522202176988-66273c2fd55f";
+
+    let list = [
+      "All Basic Plan Features",
+      "Partial & Permanent Disability Coverage",
+      "Critical Illness Support",
+      "Long-Term Savings Benefit",
+      "Child Education Support Option"
+    ];
+    list.forEach(item => features.innerHTML += `<li>${item}</li>`);
+  }
+
+  // PREMIUM
+  if(plan === "Premium"){
+    title.innerText = "Premium Life Insurance";
+    desc.innerText = "The Premium Life Insurance plan provides comprehensive protection and wealth security for your family’s future. It includes high coverage limits, investment benefits, critical illness protection, and retirement support. This plan is ideal for individuals who want complete financial planning, lifetime protection, and premium services with maximum peace of mind.";
+    price.innerText = "PKR 10,000 / month";
+    image.src = "https://images.unsplash.com/photo-1507679799987-c73779587ccf";
+
+    let list = [
+      "All Standard Plan Features",
+      "High Coverage Amount",
+      "Major Critical Illness Protection",
+      "Investment & Maturity Benefits",
+      "Retirement Support Plan",
+      "24/7 Priority Claim Assistance"
+    ];
+    list.forEach(item => features.innerHTML += `<li>${item}</li>`);
+  }
+
+  planModal.show();
+}
+
+function openContactModal(){
+  planModal.hide();
+  document.getElementById("selectedPlan").value = selectedPlanName + " Plan";
+  contactModal.show();
+}
+
+// Form Validation
+document.getElementById("contactForm").addEventListener("submit", function(e){
+  e.preventDefault();
+
+  let name = document.getElementById("name").value.trim();
+  let email = document.getElementById("email").value.trim();
+  let phone = document.getElementById("phone").value.trim();
+  let message = document.getElementById("message").value.trim();
+
+  let emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+  let phonePattern = /^[0-9]{10,13}$/;
+
+  if(name === ""){
+    alert("Please enter your name");
+    return;
+  }
+
+  if(!email.match(emailPattern)){
+    alert("Please enter a valid email");
+    return;
+  }
+
+  if(!phone.match(phonePattern)){
+    alert("Please enter a valid phone number");
+    return;
+  }
+
+  if(message === ""){
+    alert("Please enter your message");
+    return;
+  }
+
+  alert("Your life insurance application has been submitted successfully!");
+  contactModal.hide();
+  document.getElementById("contactForm").reset();
+});
+</script>
+
+<script src="script.js"></script>
+
+
+<!-- Footer -->
+<!-- ================= FOOTER ================= -->
+
+<footer class="site-footer">
+  <div class="footer-container">
+
+    <!-- Company Info -->
+    <div class="footer-column">
+      <h3>YourCompany</h3>
+      <p>Providing quality services and innovative solutions to help your business grow.</p>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="footer-column">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact Info -->
+    <div class="footer-column">
+      <h4>Contact</h4>
+      <p>Email: <a href="mailto:support@yourcompany.com">support@yourcompany.com</a></p>
+      <p>Phone: +1 (123) 456-7890</p>
+    </div>
+
+    <!-- App Download -->
+    <div class="footer-column">
+      <h4>Download Our App</h4>
+      <div class="app-buttons">
+        <a href="https://apps.apple.com/" target="_blank">
+          <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" 
+               alt="Download on the App Store">
+        </a>
+
+        <a href="https://play.google.com/store" target="_blank">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" 
+               alt="Get it on Google Play">
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2026 YourCompany. All rights reserved.</p>
+    <i class="fa-brands fa-facebook"></i>
+    <i class="fa-brands fa-github"></i>
+    <i class="fa-brands fa-linkedin"></i>
+  </div>
+</footer>
+
+
+
+</body>
+</html>

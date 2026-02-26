@@ -1,0 +1,280 @@
+
+/* --- Modern Review Page Style --- */
+body {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    font-family: 'Poppins', 'Segoe UI', sans-serif;
+    min-height: 100vh;
+}
+
+/* ===== NAVBAR ===== */
+.logo{
+    width: 12px;
+    height: 30px;
+  
+}
+
+header {
+    background: #0c3f4e;
+    padding: 15px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 999;
+    position: sticky;
+}
+
+/* NAVBAR FIX: BLUE BACKGROUND & WHITE TEXT */
+/* NAVBAR FIX: BLUE BACKGROUND, WHITE TEXT, MORE HEIGHT */
+.navbar {
+    background-color: #082046 !important; /* Blue navbar */
+    padding: 20px 0 !important;           /* Increase vertical height */
+}
+
+.navbar .navbar-brand {
+    color: #ffffff !important; /* White brand text */
+    font-weight: 700;
+    font-size: 26px;           /* Slightly bigger brand text */
+}
+
+.navbar .nav-link {
+    color: #ffffff !important; /* White links */
+    font-weight: 500;
+    font-size: 16px;
+    padding: 10px 15px;        /* Extra space inside links for height */
+    transition: color 0.3s;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+    color: #ffd369 !important; /* Gold hover/active */
+}
+
+/* Contact button */
+.navbar .btn {
+    background-color: #ffffff !important; /* White button */
+    color: #041836 !important;           /* Blue text */
+    border-radius: 25px;
+    padding: 8px 22px;                     /* Bigger button for taller navbar */
+    font-weight: 500;
+}
+
+/* Mobile toggle (hamburger icon) */
+.navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.3); /* white border */
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28255, 255, 255, 1%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+
+.main-wrapper {
+    padding: 60px 20px;
+}
+
+/* Section Title with underline */
+.section-title {
+    font-size: 32px;
+    font-weight: 800;
+    color: #1a2a6c;
+    margin-bottom: 40px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* --- Form Card (Glassmorphism Effect) --- */
+.form-card {
+    background: #212529; /* Navbar Dark Theme */
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    margin-bottom: 60px;
+    border-top: 6px solid #00d2ff;
+    transition: transform 0.3s ease;
+}
+
+.form-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Styling Inputs */
+input, textarea, .rating-select {
+    width: 100%;
+    padding: 14px;
+    margin: 12px 0;
+    border: 2px solid #343a40;
+    border-radius: 10px;
+    background: #2c3034;
+    color: #ffffff;
+    font-size: 15px;
+    transition: all 0.3s ease;
+}
+
+input:focus, textarea:focus {
+    border-color: #00d2ff;
+    outline: none;
+    background: #343a40;
+    box-shadow: 0 0 10px rgba(0, 210, 255, 0.3);
+}
+
+/* Animated Submit Button */
+.submit-btn {
+    width: 100%;
+    background: linear-gradient(to right, #00d2ff, #3a7bd5);
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: 0.4s;
+    text-transform: uppercase;
+}
+
+.submit-btn:hover {
+    letter-spacing: 2px;
+    box-shadow: 0 5px 20px rgba(58, 123, 213, 0.4);
+}
+
+/* --- Review Cards Area --- */
+#displayArea {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+}
+
+.review-card {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+    width: 100%;
+    max-width: 600px;
+    border-left: 8px solid #3a7bd5;
+    animation: slideIn 0.6s ease-out;
+    margin: 25px 25px;
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateX(-30px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+/* Details inside Review Card */
+.stars { 
+    color: #ffc107; 
+    font-size: 20px; 
+    margin-bottom: 12px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+.review-text { 
+    font-size: 16px; 
+    color: #444; 
+    line-height: 1.6;
+    font-style: italic;
+    margin-bottom: 15px;
+}
+
+.user-tag { 
+    display: flex; 
+    align-items: center; 
+    gap: 15px;
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+}
+
+.circle { 
+    width: 45px; 
+    height: 45px; 
+    background: linear-gradient(45deg, #1a2a6c, #3a7bd5); 
+    color: white; 
+    border-radius: 50%; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    font-weight: bold;
+    font-size: 16px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.user-name { 
+    font-weight: 700; 
+    color: #1a2a6c; 
+    font-size: 15px; 
+}
+/* ===== FOOTER ===== */
+/* ===== FOOTER ===== */
+.site-footer{
+  background-color: #092043;
+  color: #fbf7fb;
+}
+.footer {
+    background: #0c3f4e;
+    color: #fff;
+    padding: 80px 20px 60px; /* Bigger padding for a taller footer */
+    font-size: 16px;
+    position: relative;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 50px; /* More space between columns */
+}
+
+.footer-box h3 {
+    margin-bottom: 25px; /* More space below headings */
+    color: #ffd369;
+    font-size: 22px; /* Slightly bigger headings */
+}
+
+.footer-box p,
+.footer-box a {
+    font-size: 16px;
+    line-height: 2.2; /* More line spacing */
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 12px; /* Space between links/text */
+}
+
+.footer-box a:hover {
+    text-decoration: underline;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 50px; /* Space between content and bottom copyright */
+    font-size: 16px;
+    opacity: 0.9;
+}
+
+/* Optional: Add social media icons */
+.footer-social {
+    text-align: center;
+    margin-top: 25px;
+}
+
+.footer-social a {
+    display: inline-block;
+    margin: 0 12px;
+    font-size: 20px;
+    color: #fff;
+    transition: color 0.3s;
+}
+
+.footer-social a:hover {
+    color: #ffd369;
+}
+
+
+
+

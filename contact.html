@@ -1,0 +1,279 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact Us | [Company Name]</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <meta name="description" content="Contact [Company Name] for insurance quotes, claims support, or general inquiries." />
+  
+  
+  <!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- Bootstrap JS Bundle -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<link rel="stylesheet" href="contact.css">
+<link rel="stylesheet" href="layout.css">
+
+</head>
+
+<body>
+
+
+        <!-- Hamburger menu for mobile -->
+<!-- ================= NAVBAR ================= -->
+
+<!-- ================= NAVBAR ================= -->
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+  <div class="container-fluid px-5">
+    <a class="navbar-brand fw-bold" href="index.html">SecureLife</a>
+    
+    <!-- Mobile Toggle -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Nav Links -->
+  
+    <!-- Nav Links -->
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="plans.html">Plans</a></li>
+        <li class="nav-item"><a class="nav-link" href="review.html">Reviews</a></li>
+        <li class="nav-item">
+          <a class="nav-link contact-btn ms-2 px-3 active" href="contact.html">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+       <main>
+      <!-- <h1>Contact Us</h1>
+      <p>
+        We’re here to help. Whether you need a quote, have a question, or require
+        assistance with a claim, our team is ready to support you.
+      </p> -->
+    </header>
+
+    <div class="grid">
+      <!-- Contact Form -->
+      <section aria-labelledby="contact-form-heading">
+        <h2 id="contact-form-heading">Send Us a Message</h2>
+        <form id="contactForm">
+
+          <label for="full-name">Full Name</label>
+          <input type="text" id="full-name" name="full-name" placeholder="Your full name" required />
+
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" placeholder="you@example.com" required />
+
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="phone" placeholder="+1 (000) 000-0000" />
+
+          <label for="insurance-type">Insurance Type</label>
+          <select id="insurance-type" name="insurance-type">
+            <option value="">Select an option</option>
+            <option value="auto">Auto Insurance</option>
+            <option value="home">Home Insurance</option>
+            <option value="life">Life Insurance</option>
+            <option value="health">Health Insurance</option>
+            <option value="business">Business Insurance</option>
+            <option value="other">Other</option>
+          </select>
+
+          <label for="message">Message</label>
+          <textarea id="message" name="message" placeholder="How can we help you today?" required></textarea>
+
+          <button type="submit">Submit Inquiry</button>
+        </form>
+      </section>
+      <script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  const form = document.getElementById("contactForm");
+
+  form.addEventListener("submit", function (event) {
+    event.preventDefault(); // Stop default form submit
+
+    // Get form values
+    const fullName = document.getElementById("full-name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const phone = document.getElementById("phone").value.trim();
+    const insuranceType = document.getElementById("insurance-type").value;
+    const message = document.getElementById("message").value.trim();
+
+    // Email validation regex
+    const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+
+    // Phone validation regex (basic international support)
+    const phonePattern = /^[0-9+\-\s()]{7,20}$/;
+
+    // Validation checks
+    if (fullName === "") {
+      alert("Please enter your full name.");
+      return;
+    }
+
+    if (!emailPattern.test(email)) {
+      alert("Please enter a valid email address.");
+      return;
+    }
+
+    if (phone !== "" && !phonePattern.test(phone)) {
+      alert("Please enter a valid phone number.");
+      return;
+    }
+
+    if (insuranceType === "") {
+      alert("Please select an insurance type.");
+      return;
+    }
+
+    if (message.length < 10) {
+      alert("Message must be at least 10 characters long.");
+      return;
+    }
+
+    // If all validations pass
+    alert("Your inquiry has been submitted successfully! ✅");
+
+    // Reset form
+    form.reset();
+  });
+
+});
+</script>
+
+
+      <!-- Company Information -->
+      <aside aria-labelledby="company-info-heading">
+        <h2 id="company-info-heading">Contact Information</h2>
+        <p><strong>Phone:</strong><br />[Main Phone Number]</p>
+        <p><strong>Email:</strong><br />support@[companyname].com</p>
+        <p>
+          <strong>Office Hours:</strong><br />
+          Monday – Friday: 9:00 AM – 6:00 PM<br />
+          Saturday: 10:00 AM – 2:00 PM<br />
+          Sunday: Closed
+        </p>
+        <p>
+          <strong>Office Address:</strong><br />
+          [Company Name]<br />
+          123 Business Avenue, Suite 400<br />
+          City, State, ZIP Code<br />
+          Country
+        </p>
+      </aside>
+    </div>
+
+    <!-- Map Section -->
+    <section aria-labelledby="map-heading">
+      <h2 id="map-heading">Visit Our Office</h2>
+      <section class="contact-map">
+  <div class="container">
+   
+
+    <div class="map-wrapper">
+      <iframe
+        src="https://www.google.com/maps?q=New%20York,%20USA&output=embed"
+        width="100%"
+        height="400"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy">
+      </iframe>
+    </div>
+  </div>
+</section>
+
+      <p>
+        Our office is conveniently located and easy to access.
+        <section class="contact-email">
+  <div class="container">
+    <h2>Contact Us</h2>
+    <p>If you have any questions, feel free to reach out to us via email. We’ll get back to you as soon as possible.</p>
+
+    <div class="email-list">
+      <div class="email-item">
+        <h4>General Inquiries</h4>
+        <a href="mailto:info@yourcompany.com?subject=General%20Inquiry">
+          info@yourcompany.com
+        </a>
+      </div>
+
+      <div class="email-item">
+        <h4>Customer Support</h4>
+        <a href="mailto:support@yourcompany.com?subject=Customer%20Support%20Request">
+          support@yourcompany.com
+        </a>
+      </div>
+
+      <div class="email-item">
+        <h4>Sales</h4>
+        <a href="mailto:sales@yourcompany.com?subject=Sales%20Inquiry">
+          sales@yourcompany.com
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+<footer class="site-footer">
+  <div class="footer-container">
+
+    <!-- Company Info -->
+    <div class="footer-column">
+      <h3>YourCompany</h3>
+      <p>Providing quality services and innovative solutions to help your business grow.</p>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="footer-column">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact Info -->
+    <div class="footer-column">
+      <h4>Contact</h4>
+      <p>Email: <a href="mailto:support@yourcompany.com">support@yourcompany.com</a></p>
+      <p>Phone: +1 (123) 456-7890</p>
+    </div>
+
+    <!-- App Download -->
+    <div class="footer-column">
+      <h4>Download Our App</h4>
+      <div class="app-buttons">
+        <a href="https://apps.apple.com/" target="_blank">
+          <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" 
+               alt="Download on the App Store">
+        </a>
+
+        <a href="https://play.google.com/store" target="_blank">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" 
+               alt="Get it on Google Play">
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2026 YourCompany. All rights reserved.</p>
+    <i class="fa-brands fa-facebook"></i>
+    <i class="fa-brands fa-github"></i>
+    <i class="fa-brands fa-linkedin"></i>
+  </div>
+</footer>
+
+
+

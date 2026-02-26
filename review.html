@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reviews - SecureLife</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+<style>
+/* ================= NAVBAR ================= */
+.navbar { background-color: #082046 !important; padding: 20px 0 !important; }
+.navbar .nav-link { color: #fff !important; }
+.navbar .nav-link:hover, .navbar .nav-link.active { color: #ffd369 !important; }
+
+/* ================= HERO ================= */
+.hero {
+    background: url('happy family.jpg') no-repeat center center;
+    background-size: cover;
+    min-height: 70vh;
+    color: white;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding: 100px 20px;
+}
+.hero h1 { font-size: 2.5rem; font-weight: 700; }
+.hero p { font-size: 1.1rem; opacity: 0.9; margin-top: 15px; }
+
+/* ================= STATS ================= */
+.stats { padding: 60px 20px; background:#f8f9fa; }
+.stat-box { margin-bottom: 30px; }
+.stat-box h2 { font-size: 2rem; color:#0d6efd; font-weight:700; }
+.stat-box p { font-size:1rem; color:#555; margin-top:5px; }
+
+/* ================= TRUST SECTION ================= */
+.trust { padding: 60px 20px; }
+.trust i { font-size:2.5rem; color:#0d6efd; margin-bottom:15px; }
+
+/* ================= REVIEW CARDS ================= */
+.review-card {
+    background:white;
+    border-radius:18px;
+    padding:25px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.08);
+    transition:.4s;
+    position:relative;
+    height:100%;
+}
+.review-card:hover { transform:translateY(-10px); box-shadow:0 20px 40px rgba(0,0,0,0.15); }
+.review-card::before{ content:""; position:absolute; height:5px; width:100%; top:0; left:0; background:linear-gradient(to right,#00d2ff,#3a7bd5); }
+.stars { color:#ffc107; margin-bottom:10px; }
+.user-tag{ display:flex; align-items:center; gap:10px; margin-top:15px; }
+.circle{ width:45px; height:45px; border-radius:50%; background:linear-gradient(45deg,#1a2a6c,#3a7bd5); color:white; display:flex; align-items:center; justify-content:center; font-weight:bold; }
+
+/* ================= FORM ================= */
+.form-section{ background:#f4f7fa; padding:60px 20px; }
+.form-card{ background:#212529; padding:35px; border-radius:15px; max-width:600px; margin:auto; }
+.form-card input, .form-card textarea, .form-card select{ width:100%; padding:12px; margin:10px 0; border-radius:8px; border:none; }
+.submit-btn{ background:linear-gradient(to right,#00d2ff,#3a7bd5); border:none; padding:12px; color:white; font-weight:bold; border-radius:8px; width:100%; }
+
+/* ================= FAQ ================= */
+.faq{ padding:60px 20px; }
+
+/* ================= CTA ================= */
+.cta{ background:linear-gradient(to right,#4764d8,#06275b); color:white; padding:60px 20px; text-align:center; margin: 30px 30px; border-radius:10px; }
+
+/* ================= FOOTER ================= */
+.site-footer{ background-color: #092043; color: #fbf7fb; padding:40px 20px; }
+.footer-container { max-width: 1200px; margin:auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; }
+.footer-column h3, .footer-column h4 { color:#ffd369; margin-bottom:15px; }
+.footer-column p, .footer-column a { color:#fff; text-decoration:none; display:block; margin-bottom:8px; }
+.footer-column a:hover { text-decoration: underline; }
+.footer-bottom { text-align:center; margin-top:40px; font-size:14px; opacity:0.8; }
+.footer-social a { margin:0 10px; font-size:20px; color:#fff; transition:0.3s; }
+.footer-social a:hover { color:#ffd369; }
+
+/* ================= MEDIA QUERIES ================= */
+@media(max-width:768px){
+    .hero h1 { font-size:2rem; }
+    .hero p { font-size:1rem; }
+    .stat-box h2 { font-size:1.5rem; }
+    .trust i { font-size:2rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="#">SecureLife</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="index copy.html">Plans</a></li>
+        <li class="nav-item"><a class="nav-link active" href="review.html">Reviews</a></li>
+        <li class="nav-item"><a class="nav-link ms-2 px-3" href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <h1>Real Stories From Our Policy Holders</h1>
+    <p>Trusted protection. Proven satisfaction. Reliable claims process.</p>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats text-center">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-6 col-md-3 stat-box">
+        <h2 class="counter" data-target="10000">0</h2>
+        <p>Happy Clients</p>
+      </div>
+      <div class="col-6 col-md-3 stat-box">
+        <h2 class="counter" data-target="4.9">0</h2>
+        <p>Average Rating</p>
+      </div>
+      <div class="col-6 col-md-3 stat-box">
+        <h2 class="counter" data-target="98">0</h2>
+        <p>Claim Approval Rate</p>
+      </div>
+      <div class="col-6 col-md-3 stat-box">
+        <h2 class="counter" data-target="15">0</h2>
+        <p>Years Experience</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST SECTION -->
+<section class="trust text-center">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-12 col-md-4">
+        <i class="fa-solid fa-shield-halved"></i>
+        <h5>Secure & Safe</h5>
+        <p>Your data and policies are fully protected.</p>
+      </div>
+      <div class="col-12 col-md-4">
+        <i class="fa-solid fa-headset"></i>
+        <h5>24/7 Support</h5>
+        <p>Always available to help you.</p>
+      </div>
+      <div class="col-12 col-md-4">
+        <i class="fa-solid fa-award"></i>
+        <h5>Award Winning</h5>
+        <p>Recognized for excellence in service.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="container my-5">
+  <div class="row g-4">
+    <script>
+      const names = ["Ali Hasan","Ubaid Raza","Haider Ali","Ayra Arman","Sana Shafique","Ahmed Malik"];
+      document.write(names.map(n => `
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="review-card">
+            <div class="stars">★★★★★</div>
+            <p>"SecureLife provided excellent service and quick claim settlement. Highly recommended insurance provider."</p>
+            <div class="user-tag">
+              <div class="circle">${n.substring(0,2)}</div>
+              <span>${n}</span>
+            </div>
+          </div>
+        </div>
+      `).join(''));
+    </script>
+  </div>
+</section>
+
+<!-- REVIEW FORM -->
+<section class="form-section">
+  <div class="form-card">
+    <h3 class="text-center text-white mb-3">Submit Your Review</h3>
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <select>
+        <option>★★★★★</option>
+        <option>★★★★☆</option>
+        <option>★★★☆☆</option>
+        <option>★★☆☆☆</option>
+        <option>★☆☆☆☆</option>
+      </select>
+      <textarea rows="3" placeholder="Your Experience"></textarea>
+      <button class="submit-btn">Post Review</button>
+    </form>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq container my-5">
+  <h2 class="text-center mb-4">Frequently Asked Questions</h2>
+  <div class="accordion" id="faqAccordion">
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingOne">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+          How long does claim approval take?
+        </button>
+      </h2>
+      <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+        <div class="accordion-body">Most claims are processed within 3-5 working days.</div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingTwo">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+          Are policies customizable?
+        </button>
+      </h2>
+      <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+        <div class="accordion-body">Yes, you can customize your insurance plan based on your needs.</div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingThree">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
+          Is SecureLife available nationwide?
+        </button>
+      </h2>
+      <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+        <div class="accordion-body">Yes, our services are available across the country.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta container">
+  <h2>Ready To Secure Your Future?</h2>
+  <p>Join thousands of happy policy holders today.</p>
+  <a href="contact.html" class="btn btn-light mt-3">Get Started</a>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-column">
+      <h3>YourCompany</h3>
+      <p>Providing quality services and innovative solutions to help your business grow.</p>
+    </div>
+    <div class="footer-column">
+      <h4>Quick Links</h4>
+      <a href="#">Home</a>
+      <a href="#">About Us</a>
+      <a href="#">Services</a>
+      <a href="#">Contact</a>
+      <a href="#">Privacy Policy</a>
+    </div>
+    <div class="footer-column">
+      <h4>Contact</h4>
+      <p>Email: <a href="mailto:support@yourcompany.com">support@yourcompany.com</a></p>
+      <p>Phone: +1 (123) 456-7890</p>
+    </div>
+    <div class="footer-column">
+      <h4>Download Our App</h4>
+      <a href="https://apps.apple.com/" target="_blank">
+        <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" class="img-fluid" alt="App Store">
+      </a>
+      <a href="https://play.google.com/store" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" class="img-fluid" alt="Google Play">
+      </a>
+    </div>
+  </div>
+  <div class="footer-bottom footer-social">
+    <p>&copy; 2026 YourCompany. All rights reserved.</p>
+    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+    <a href="#"><i class="fa-brands fa-github"></i></a>
+    <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+  </div>
+</footer>
+
+<!-- BOOTSTRAP JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- COUNTER JS -->
+<script>
+const counters = document.querySelectorAll('.counter');
+counters.forEach(counter => {
+    const updateCount = () => {
+        const target = +counter.getAttribute('data-target');
+        let count = +counter.innerText;
+        let increment = target / 200;
+        if(count < target){
+            counter.innerText = Math.ceil(count + increment);
+            setTimeout(updateCount, 20);
+        } else {
+            counter.innerText = target;
+        }
+    }
+    updateCount();
+});
+</script>
+
+</body>
+</html>

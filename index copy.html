@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SecureLife Insurance</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+
+<style>
+body{
+background:#f4f7fb;
+font-family:'Segoe UI', sans-serif;
+}
+
+.hero{
+background: linear-gradient(135deg,#16233b,#132950);
+color:white;
+}
+/* ===== NAVBAR ===== */
+.logo{
+    width: 12px;
+    height: 30px;
+  
+}
+
+header {
+    background: #0c3f4e;
+    padding: 15px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 999;
+    position: sticky;
+}
+
+/* NAVBAR FIX: BLUE BACKGROUND & WHITE TEXT */
+/* NAVBAR FIX: BLUE BACKGROUND, WHITE TEXT, MORE HEIGHT */
+.navbar {
+    background-color: #082046 !important; /* Blue navbar */
+    padding: 20px 0 !important;           /* Increase vertical height */
+}
+
+.navbar .navbar-brand {
+    color: #ffffff !important; /* White brand text */
+    font-weight: 700;
+    font-size: 26px;           /* Slightly bigger brand text */
+}
+
+.navbar .nav-link {
+    color: #ffffff !important; /* White links */
+    font-weight: 500;
+    font-size: 16px;
+    padding: 10px 15px;        /* Extra space inside links for height */
+    transition: color 0.3s;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+    color: #ffd369 !important; /* Gold hover/active */
+}
+
+/* Contact button */
+.navbar .btn {
+    background-color: #ffffff !important; /* White button */
+    color: #041836 !important;           /* Blue text */
+    border-radius: 25px;
+    padding: 8px 22px;                     /* Bigger button for taller navbar */
+    font-weight: 500;
+}
+
+/* Mobile toggle (hamburger icon) */
+.navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.3); /* white border */
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28255, 255, 255, 1%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+
+.company-card{
+border:none;
+border-radius:20px;
+padding:30px;
+background:white;
+transition:0.4s;
+box-shadow:0 8px 20px rgba(0,0,0,0.08);
+}
+
+.company-card:hover{
+transform:translateY(-12px);
+box-shadow:0 20px 40px rgba(0,0,0,0.15);
+}
+
+.btn-view{
+background: #092d77;;
+color:white;
+border-radius:30px;
+}
+
+.btn-view:hover{
+background:#021a45;
+color:white;
+}
+
+.company-img{
+height:70px;
+object-fit:contain;
+}
+
+
+/* =========================
+   Footer
+========================= */
+/* ===== FOOTER ===== */
+/* ===== FOOTER ===== */
+.site-footer{
+  background-color: #092043;
+  color: #fbf7fb;
+}
+.footer {
+    background: #0c3f4e;
+    color: #fff;
+    padding: 80px 20px 60px; /* Bigger padding for a taller footer */
+    font-size: 16px;
+    position: relative;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 50px; /* More space between columns */
+}
+
+.footer-box h3 {
+    margin-bottom: 25px; /* More space below headings */
+    color: #ffd369;
+    font-size: 22px; /* Slightly bigger headings */
+}
+
+.footer-box p,
+.footer-box a {
+    font-size: 16px;
+    line-height: 2.2; /* More line spacing */
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 12px; /* Space between links/text */
+}
+
+.footer-box a:hover {
+    text-decoration: underline;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 50px; /* Space between content and bottom copyright */
+    font-size: 16px;
+    opacity: 0.9;
+}
+
+/* Optional: Add social media icons */
+.footer-social {
+    text-align: center;
+    margin-top: 25px;
+}
+
+.footer-social a {
+    display: inline-block;
+    margin: 0 12px;
+    font-size: 20px;
+    color: #fff;
+    transition: color 0.3s;
+}
+
+.footer-social a:hover {
+    color: #ffd369;
+}
+
+
+
+</style>
+</head>
+
+<body>
+  <!-- ================= NAVBAR ================= -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+  <div class="container">
+    
+    <a class="navbar-brand fw-bold" href="index.html">
+      SecureLife
+    </a>
+
+    <!-- Mobile Toggle -->
+    <button class="navbar-toggler" type="button" 
+            data-bs-toggle="collapse" 
+            data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Nav Links -->
+    <div class="collapse navbar-collapse" id="navbarNav" bg="primary">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link " href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="about.html">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="index copy.html">Plans</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="review.html">Reviews</a>
+        </li>
+      <li class="nav-item">
+  <a class="nav-link contact-btn ms-2 px-3" href="contact.html">
+    Contact
+  </a>
+</li>
+
+      </ul>
+    </div>
+
+  </div>
+</nav>
+
+
+
+<section class="hero text-center py-5">
+<div class="container">
+<h1 class="fw-bold">Our Insurance Companies</h1>
+<p>Select a company to explore available plans</p>
+</div>
+</section>
+
+<section class="container my-5">
+<div class="row g-4">
+
+<div class="col-md-4">
+<div class="company-card text-center">
+<img src="jubilee.png" class="company-img mb-3">
+<h5>Jubilee Life</h5>
+<a href="plans.html?company=jubilee" class="btn btn-view">View Plans</a>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="company-card text-center">
+<img src="allianz.png" class="company-img mb-3">
+<h5>Allianz</h5>
+<a href="plans.html?company=allianz" class="btn btn-view">View Plans</a>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="company-card text-center">
+<img src="adamjee.png" class="company-img mb-3">
+<h5>Adamjee</h5>
+<a href="plans.html?company=adamjee" class="btn btn-view">View Plans</a>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="company-card text-center">
+<img src="efu.png" class="company-img mb-3">
+<h5>EFU Life</h5>
+<a href="plans.html?company=efu" class="btn btn-view">View Plans</a>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="company-card text-center">
+<img src="state.png" class="company-img mb-3">
+<h5>State Life</h5>
+<a href="plans.html?company=state" class="btn btn-view">View Plans</a>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="company-card text-center">
+<img src="zurich.png" class="company-img mb-3" alt="Health">
+<h5>Zurich Insurance</h5>
+<a href="plans.html?company=igi" class="btn btn-view">View Plans</a>
+</div>
+</div>
+
+</div>
+</section>
+
+<!-- ================= Vehicle Category Hero ================= -->
+<section class="hero text-center py-5 mt-5">
+<div class="container">
+<h2 class="fw-bold">Vehicle Insurance Categories</h2>
+<p>Select vehicle type to explore plans</p>
+</div>
+</section>
+
+<!-- ================= Vehicle Category Cards ================= -->
+<section class="container my-5">
+<div class="row justify-content-center g-4">
+
+<!-- Two Wheelers -->
+<div class="col-md-5">
+<div class="company-card text-center">
+<i class="fa-solid fa-motorcycle fa-3x mb-3 text-primary"></i>
+<h5>Two Wheelers</h5>
+<p>Bike & scooter insurance plans with full protection.</p>
+<a href="two-wheelers.html" class="btn btn-view">View Plans</a>
+</div>
+</div>
+
+<!-- Four Wheelers -->
+<div class="col-md-5">
+<div class="company-card text-center">
+<i class="fa-solid fa-car fa-3x mb-3 text-primary"></i>
+<h5>Four Wheelers</h5>
+<p>Car insurance plans for personal and commercial vehicles.</p>
+<a href="four-wheelers.html" class="btn btn-view">View Plans</a>
+</div>
+</div>
+
+</div>
+</section>
+
+<!-- Footer -->
+<!-- ================= FOOTER ================= -->
+
+<footer class="site-footer">
+  <div class="footer-container">
+
+    <!-- Company Info -->
+    <div class="footer-column">
+      <h3>YourCompany</h3>
+      <p>Providing quality services and innovative solutions to help your business grow.</p>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="footer-column">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact Info -->
+    <div class="footer-column">
+      <h4>Contact</h4>
+      <p>Email: <a href="mailto:support@yourcompany.com">support@yourcompany.com</a></p>
+      <p>Phone: +1 (123) 456-7890</p>
+    </div>
+
+    <!-- App Download -->
+    <div class="footer-column">
+      <h4>Download Our App</h4>
+      <div class="app-buttons">
+        <a href="https://apps.apple.com/" target="_blank">
+          <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" 
+               alt="Download on the App Store">
+        </a>
+
+        <a href="https://play.google.com/store" target="_blank">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" 
+               alt="Get it on Google Play">
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2026 YourCompany. All rights reserved.</p>
+    <i class="fa-brands fa-facebook"></i>
+    <i class="fa-brands fa-github"></i>
+    <i class="fa-brands fa-linkedin"></i>
+  </div>
+</footer>
+
+
+
+
+</body>
+</html>
+

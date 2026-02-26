@@ -1,0 +1,242 @@
+/* =========================
+   Global Styling
+========================= */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #f4f6f9;
+  margin: 0;
+  padding: 0;
+}
+/* ===== NAVBAR ===== */
+.logo{
+    width: 12px;
+    height: 30px;
+  
+}
+
+header {
+    background: #0c3f4e;
+    padding: 15px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 999;
+    position: sticky;
+}
+
+/* NAVBAR FIX: BLUE BACKGROUND & WHITE TEXT */
+/* NAVBAR FIX: BLUE BACKGROUND, WHITE TEXT, MORE HEIGHT */
+.navbar {
+    background-color: #082046 !important; /* Blue navbar */
+    padding: 20px 0 !important;           /* Increase vertical height */
+}
+
+.navbar .navbar-brand {
+    color: #ffffff !important; /* White brand text */
+    font-weight: 700;
+    font-size: 26px;           /* Slightly bigger brand text */
+}
+
+.navbar .nav-link {
+    color: #ffffff !important; /* White links */
+    font-weight: 500;
+    font-size: 16px;
+    padding: 10px 15px;        /* Extra space inside links for height */
+    transition: color 0.3s;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+    color: #ffd369 !important; /* Gold hover/active */
+}
+
+/* Contact button */
+.navbar .btn {
+    background-color: #ffffff !important; /* White button */
+    color: #041836 !important;           /* Blue text */
+    border-radius: 25px;
+    padding: 8px 22px;                     /* Bigger button for taller navbar */
+    font-weight: 500;
+}
+
+/* Mobile toggle (hamburger icon) */
+.navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.3); /* white border */
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28255, 255, 255, 1%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+
+
+/* =========================
+   Hero Section
+========================= */
+.hero {
+  background: linear-gradient(rgba(13,110,253,.85), rgba(13,110,253,.85)),
+  url('https://images.unsplash.com/photo-1521791055366-0d553872125f');
+  background-size: cover;
+  background-position: center;
+  padding: 100px 0;
+  color: #fff;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 48px;
+  font-weight: 700;
+}
+
+.hero p {
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+
+/* =========================
+   Plan Cards
+========================= */
+.plan-card {
+  background: #fff;
+  border-radius: 19px;
+  padding: 30px 20px;
+  text-align: center;
+  transition: 0.4s;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.plan-card i {
+  font-size: 50px;
+  color: #0d6efd;
+  margin-bottom: 15px;
+}
+
+.plan-card h4 {
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.plan-card p {
+  font-size: 14px;
+  color: #555;
+}
+
+.plan-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+
+/* =========================
+   Buttons
+========================= */
+.view-plan-btn {
+  transition: 0.3s;
+}
+
+.view-plan-btn:hover {
+  background-color: #0d6efd;
+  color: #fff;
+  border-color: #0d6efd;
+}
+
+
+/* =========================
+   Footer
+========================= */
+/* ===== FOOTER ===== */
+.site-footer{
+  background-color: #092043;
+  color: #fbf7fb;
+}
+.footer {
+    background: #0c3f4e;
+    color: #fff;
+    padding: 80px 20px 60px; /* Bigger padding for a taller footer */
+    font-size: 16px;
+    position: relative;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 50px; /* More space between columns */
+}
+
+.footer-box h3 {
+    margin-bottom: 25px; /* More space below headings */
+    color: #ffd369;
+    font-size: 22px; /* Slightly bigger headings */
+}
+
+.footer-box p,
+.footer-box a {
+    font-size: 16px;
+    line-height: 2.2; /* More line spacing */
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 12px; /* Space between links/text */
+}
+
+.footer-box a:hover {
+    text-decoration: underline;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 50px; /* Space between content and bottom copyright */
+    font-size: 16px;
+    opacity: 0.9;
+}
+
+/* Optional: Add social media icons */
+.footer-social {
+    text-align: center;
+    margin-top: 25px;
+}
+
+.footer-social a {
+    display: inline-block;
+    margin: 0 12px;
+    font-size: 20px;
+    color: #fff;
+    transition: color 0.3s;
+}
+
+.footer-social a:hover {
+    color: #ffd369;
+}
+
+
+
+
+.company-img {
+  width:100%;
+  height:160px;
+  object-fit:contain;
+  background:#f8f9fa;
+  padding:15px;
+  border-radius:12px;
+}
+
+.logo-circle{
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    overflow: hidden;        
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #eee;
+}
+
+.logo-circle img{
+    height: 120px;
+    object-fit: cover;
+    object-position: top;   
+}
